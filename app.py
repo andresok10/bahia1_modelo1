@@ -37,7 +37,7 @@ db.create_all()
 try:
     db.session.add_all(consultas)
     db.session.commit()
-    db.session.close()
+    #db.session.close()
 except:
     pass
 
