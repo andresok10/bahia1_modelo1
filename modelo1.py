@@ -92,11 +92,11 @@ consultas=[
     subcat_hombre(nombre="Pantalon",        img1="2.png", sub_hombre=2),
     subcat_hombre(nombre="Sudaderas y Abrigos", img1="3.jpg", sub_hombre=3),
     subcat_hombre(nombre="Chaquetas",          img1="5.webp", sub_hombre=4),
-    subcat_hombre(nombre="Trajes Elegantes",   img1="5.webp", sub_hombre=6),
-    subcat_hombre(nombre="Ropa de Baño",       img1="6.jpg", sub_hombre=7),
-    subcat_hombre(nombre="Gorras y Bolsos",    img1="7.jpg", sub_hombre=8),
-    subcat_hombre(nombre="Zapatos",            img1="8.png",     sub_hombre=9),
-    subcat_hombre(nombre="Joyeria y Accesorios", img1="9.jpg", sub_hombre=10),
+    subcat_hombre(nombre="Trajes Elegantes",   img1="5.webp", sub_hombre=5),
+    subcat_hombre(nombre="Ropa de Baño",       img1="6.jpg", sub_hombre=6),
+    subcat_hombre(nombre="Gorras y Bolsos",    img1="7.jpg", sub_hombre=7),
+    subcat_hombre(nombre="Zapatos",            img1="8.png",     sub_hombre=8),
+    subcat_hombre(nombre="Joyeria y Accesorios", img1="9.jpg", sub_hombre=9),
 
     # mujer  blusas
     articulos(img1="blusa1.webp", nombre="ok1",precio=10.22, info="xxx",stock=2, sub_mujer=1, sub_hombre=0),
