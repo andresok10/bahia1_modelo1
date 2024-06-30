@@ -1,12 +1,13 @@
 from flask import Flask
 from flask_wtf.csrf import CSRFProtect   #from flask_wtf import FlaskForm,CSRFProtect  # pip install Flask-WTF
-from modelo1 import *
+#from modelo1 import *
 #from fun_inicio_cookie_cart2 import app_blueprint as a
 #from fun_inicio_session_get import app_blueprint as a
 from fun_inicio1xx import app_blueprint as a
 from fun_categorias import app_blueprint as b
 from fun_productos import app_blueprint as c
 from fun_usuarios import app_blueprint as d
+from modelo1 import *
 app = Flask(__name__)
 app.secret_key="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 #app.config['SQLALCHEMY_DATABASE_URI']= 'postgresql+psycopg2://postgres:123456@localhost:5432/test'
