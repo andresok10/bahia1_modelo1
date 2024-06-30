@@ -36,7 +36,7 @@ app.app_context().push()
 db.create_all()
 
 try:
-    db.session.add_all(consultas)
+    db.session.add(consultas)
     db.session.commit()
     #db.session.close()
 except:
