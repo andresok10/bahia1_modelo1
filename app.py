@@ -44,8 +44,8 @@ except:
 
 if __name__ == '__main__':
     csrf = CSRFProtect(app)
-    #app.run(host='0.0.0.0', debug=True)
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
+    #app.run(debug=True)
 
 #ImportError: cannot import name 'app_blueprint1' from partially initialized module 'fun_inicio' (most likely due to a circular import) 
 #<a href="/perfil">
