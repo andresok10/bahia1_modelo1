@@ -12,9 +12,9 @@ app.secret_key="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 #app.config['SQLALCHEMY_DATABASE_URI']= 'postgresql+psycopg2://postgres:123456@localhost:5432/test'
 #engine=create_engine('postgresql://ok:7qF6RmXo5vKNJ4QzWOQDD4NyPGigclw9@dpg-cpgajvmct0pc73dag83g-a:5432/db1_dhy6')
 #app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql+psycopg2://ok:b5Dko0Kgdnn3L7Oj6Qpl05Lz0rTopmSc@dpg-cphs6eq1hbls73b8isk0-a:5432/db1_oi4n"
-
-#app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql+psycopg2://ok:zuARFksZaPuXh8CBTUfC2T27F8KicWiR@dpg-cpmgrquehbks73fp1p90-a/bahia1_modelo1"
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:@localhost/bahia1"
+# postgresql://ok:rHQrESj4Llaes3LVEL5rWP7yoepeQBVL@dpg-cq0sdm3v2p9s73cfofdg-a/ok1_1kc3
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql+psycopg2://ok:rHQrESj4Llaes3LVEL5rWP7yoepeQBVL@dpg-cq0sdm3v2p9s73cfofdg-a/ok1_1kc3"
+#app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:@localhost/bahia1"
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://usuario:contraseña@localhost/nombre_base_datos'  # Reemplaza con tu propia configuración de MySQL
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 #app.config['STRIPE_SECRET_KEY'] = 'sk_test_51LJBxwEpqu9KnJeFKsKsZSeGMNI51RAcOrG7SYa4LrtP7vkvLNXUdjsAXt8flVgb3VITVYqSAJUGMYeDxiaAgRhA002OY7g4L3'
