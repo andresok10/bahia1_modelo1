@@ -73,8 +73,6 @@ consultas=[
     cat(nombre="Niño"),
     cat(nombre="Niña"),
 
-    #subcat_mas(),
-
     subcat_mujer(nombre="Blusas y Camisetas", img1="1.png", sub_mujer=1),
     subcat_mujer(nombre="Faldas",             img1="2.webp", sub_mujer=2),
     subcat_mujer(nombre="Pantalon",           img1="3.webp", sub_mujer=3),
@@ -158,7 +156,7 @@ consultas=[
     articulos(img1="m2.jpg",nombre="ok45",precio=20.22, info="xxx",stock=5, sub_mujer=12, sub_hombre=0),
     articulos(img1="m3.jpg",nombre="ok46",precio=10.22, info="xxx",stock=5, sub_mujer=12, sub_hombre=0),
     articulos(img1="m4.jpg",nombre="ok47",precio=20.22, info="xxx",stock=5, sub_mujer=12, sub_hombre=0)
-    
+]
     # hombre  camisas
     #articulos(img1="1.jpg",nombre="ok48",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=1),
     #articulos(img1="2.webp",nombre="ok49",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=1),
@@ -180,7 +178,7 @@ consultas=[
     #articulos(img1="3.jpg",nombre="ok50",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=4),
     #articulos(img1="4.webp",nombre="ok51",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=4)
 
-]
+#]
 
 #try:
 #    db.session.add_all(consultas)
