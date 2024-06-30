@@ -160,25 +160,25 @@ consultas=[
     articulos(img1="m4.jpg",nombre="ok47",precio=20.22, info="xxx",stock=5, sub_mujer=12, sub_hombre=0),
     
     # hombre  camisas
-    articulos(img1="1.jpg",nombre="ok48",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=1),
-    articulos(img1="2.webp",nombre="ok49",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=1),
-    articulos(img1="3.webp",nombre="ok50",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=1),
-    articulos(img1="4.webp",nombre="ok51",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=1),
+    #articulos(img1="1.jpg",nombre="ok48",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=1),
+    #articulos(img1="2.webp",nombre="ok49",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=1),
+    #articulos(img1="3.webp",nombre="ok50",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=1),
+    #articulos(img1="4.webp",nombre="ok51",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=1),
     # pantalon
-    articulos(img1="1.webp",nombre="ok48",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=2),
-    articulos(img1="2.jpeg",nombre="ok49",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=2),
-    articulos(img1="3.jpg",nombre="ok50",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=2),
-    articulos(img1="4.webp",nombre="ok51",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=2),
+    #articulos(img1="1.webp",nombre="ok48",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=2),
+    #articulos(img1="2.jpeg",nombre="ok49",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=2),
+    #articulos(img1="3.jpg",nombre="ok50",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=2),
+    #articulos(img1="4.webp",nombre="ok51",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=2),
     # abrigos
-    articulos(img1="1.webp",nombre="ok48",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=3),
-    articulos(img1="2.jpg",nombre="ok49",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=3),
-    articulos(img1="3.jpg",nombre="ok50",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=3),
-    articulos(img1="4.jpg",nombre="ok51",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=3),
+    #articulos(img1="1.webp",nombre="ok48",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=3),
+    #articulos(img1="2.jpg",nombre="ok49",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=3),
+    #articulos(img1="3.jpg",nombre="ok50",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=3),
+    #articulos(img1="4.jpg",nombre="ok51",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=3),
     # chaquetas
-    articulos(img1="1.jpg",nombre="ok48",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=4),
-    articulos(img1="2.jpg",nombre="ok49",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=4),
-    articulos(img1="3.jpg",nombre="ok50",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=4),
-    articulos(img1="4.webp",nombre="ok51",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=4)
+    #articulos(img1="1.jpg",nombre="ok48",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=4),
+    #articulos(img1="2.jpg",nombre="ok49",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=4),
+    #articulos(img1="3.jpg",nombre="ok50",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=4),
+    #articulos(img1="4.webp",nombre="ok51",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=4)
 
 ]
 
