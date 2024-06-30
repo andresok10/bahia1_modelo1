@@ -9,7 +9,7 @@ from fun_productos import app_blueprint as c
 from fun_usuarios import app_blueprint as d
 from modelo1 import *
 app = Flask(__name__)
-app.secret_key="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+app.secret_key="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 #app.config['SQLALCHEMY_DATABASE_URI']= 'postgresql+psycopg2://postgres:123456@localhost:5432/test'
 #engine=create_engine('postgresql://ok:7qF6RmXo5vKNJ4QzWOQDD4NyPGigclw9@dpg-cpgajvmct0pc73dag83g-a:5432/db1_dhy6')
 #app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql+psycopg2://ok:b5Dko0Kgdnn3L7Oj6Qpl05Lz0rTopmSc@dpg-cphs6eq1hbls73b8isk0-a:5432/db1_oi4n"
