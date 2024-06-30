@@ -158,8 +158,7 @@ consultas=[
     articulos(img1="m2.jpg",nombre="ok45",precio=20.22, info="xxx",stock=5, sub_mujer=12, sub_hombre=0),
     articulos(img1="m3.jpg",nombre="ok46",precio=10.22, info="xxx",stock=5, sub_mujer=12, sub_hombre=0),
     articulos(img1="m4.jpg",nombre="ok47",precio=20.22, info="xxx",stock=5, sub_mujer=12, sub_hombre=0),
-
-
+    
     # hombre  camisas
     articulos(img1="1.jpg",nombre="ok48",precio=10.22, info="xxx",stock=1, sub_mujer=0, sub_hombre=1),
     articulos(img1="2.webp",nombre="ok49",precio=20.22, info="xxx",stock=2, sub_mujer=0, sub_hombre=1),
