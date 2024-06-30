@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% for x in cat1 %}
+    <a href="">{{x.nombre}}</a>
+    {% endfor %}
+
+
+    <div>
+        {% for x in sub1 %}
+        {% if x.catid==1 %}
+    <a href="/inicio/{{x.id}}">{{x.nombre}}</a>
+    {% endif %}
+    {% if x.catid ==2 %}
+    <a href="/inicio/{{x.id}}">{{x.nombre}}</a>
+    {% endif %}
+    {% if x.catid==3 %}
+    <a href="/inicio/{{x.id}}">{{x.nombre}}</a>
+    {% endif %}
+    {% if x.catid ==4 %}
+    <a href="/inicio/{{x.id}}">{{x.nombre}}</a>
+    {% endif %}
+    <br>
+        {% endfor %}
+    </div>
+
+    <div>
+        {% for x in art1 %}
+
+        <p>{{x.nombre}}</p>
+
+
+        {% endfor %}
+    </div>
+    <div>
+        {% for x in art2 %}
+
+        <p>{{x.nombre}}</p>
+
+
+        {% endfor %}
+    </div>
+    
+</body>
+
+</html>

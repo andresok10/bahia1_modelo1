@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+</head>
+<body>
+    <h1>Carrito de Compras</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Artículo</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>iva</th>
+                <th>Precio con IVA</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for articulo, cantidad in datos_combinados %}
+            <tr>
+                <td>{{ articulo.nombre }}</td>
+                <td>{{ cantidad }}</td>
+                <td>{{ articulo.precio }}</td>
+                <td>{{ "{:.2f}".format(articulo.precio*0.12) }}</td>
+                <td>{{ '%.2f' % precios_con_iva_articulos[articulo.nombre] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    
+    <p>Total con IVA: {{ "{:.2f}".format(precios_con_iva) }}</p>
+</body>
+</html>

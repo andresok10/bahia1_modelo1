@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahia.com</title>
+    <style>
+        .miBoton {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+          
+          .miBoton.clicked {
+            background-color: #28a745; /* Cambiar a color verde cuando se hace clic */
+          }
+          
+          
+
+
+        * {text-decoration: none;list-style: none;padding: 0px;outline: none;margin: 0px 0px;}
+        body {padding: 0px 0px;background: rgb(255, 255, 255);margin: 0px 20px;}
+        .contenedor-galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0px 0px;}
+        .img-galeria{height: 400px;width:600px;border-radius:20px;}
+
+        .contenedor1 {display: grid;grid-template-columns: repeat(12, 1fr);width: 100%;align-items: center;}
+        .logo{grid-column:3/3;}
+        .logo .titulo{font-size: 35px;}
+        .img1{width:150px;height:50px;}
+        .sitios{grid-column:2/8;}
+        .img2{width:50px;height:40px;;margin:2px 2px;}
+
+        .navxxx{grid-column:8/13;display: flex;justify-content: flex-end;gap:15px;}
+        .nav{grid-column:7/13;display: flex;justify-content: flex-end;gap:15px;align-items: center;margin:0px 5px;}
+        .img3_nav{width:50px;height:40px;}
+
+        .contenedor2 {display: flex;justify-content: center;align-items: center;} /*background-color: rgb(204, 128, 29);*/
+        .parrafo1{width:30%;font-size: 20px;text-align: center;color: #0c4fb3;} /*margin: 40px 30px;background-color: blueviolet;*/
+        .wasap{display: flex;justify-content: center;align-items: center;}
+        .wasap .img-wasap{width: 50px;height: 50px;}
+
+        .slider {width: 70%;height: 200px;text-align: center;margin: 5px 0px;overflow: hidden;}
+        .slider ul {text-align: center;display: flex;padding: 0;width: 400%;animation: slide 15s infinite linear;height: 200px;}
+        .slider img {width: 50%;height: 200px;text-align: center;}
+        @keyframes slide {
+            0% {margin-left: 0;}
+            20% {margin-left: 0;}
+            25% {margin-left: -100%;}
+            45% {margin-left: -100%;}
+            50% {margin-left: -200%;}
+            70% {margin-left: -200%;}
+            75% {margin-left: -300%;}
+            100% {margin-left: -300%;}
+        }
+
+        .contenedor3{display: flex;justify-content: center;}
+        .contenedor-categorias{margin:5px 10px;text-align: center;background-color: rgb(192, 210, 226);border-radius: 10px;}
+        .boton-categorias{width:100px;height: 30px;background-color: rgb(40, 206, 170);margin:2px 0px;}
+        .img-cat{width:70px;height:30px;margin: 0px 0px;}
+
+        .promocion1 {
+            /*background-image: url(/static/images/pagina/hero-bg.jpg);*/
+            background-color:cornflowerblue;width: 100%;height: 180px;
+            text-align: center;margin: 20px 0px;
+        }
+        .promocion1 p {padding: 10px;}
+
+        /*.promocion2{width:30%;text-align: center;height:600px;}*/        
+        .hijo1{flex-wrap: wrap;text-align: center;}
+        .hijo2 {display: flex;text-align: center;justify-content: space-between;}
+        .formx{text-align: center;display: flex;justify-content: center;justify-items: center;align-items: center;align-self: center ;}
+
+        .promocion3 {grid-column:11/13;background-color: cornflowerblue;margin-left:1px;}
+        .promocion3 p {padding: 50px;text-align: center}
+
+        .creditos {width:90%;}
+
+        @media screen and (max-width:900px) {
+            body{margin:5px 0px;}
+            .gallery-item imgxxxxx{width: 100px;}
+            .contenedor-galeria {grid-template-columns: repeat(3,1fr);} /*background-color: burlywood;*/     
+            /**##############################################**/
+            .boton-categorias{width:100px;height:20px;font-size:10px;}
+            .img3_nav{width:20px;height:20px;margin: 0px 1px;}
+            .img1{width:70px;height:30px;}
+        }
+        @media screen and (max-width:760px) {
+            .gallery-item imgxxxx{width: 100px;}
+            body{margin:5px 0px;}
+            .img1{width:150px;height:30px;margin-left:2px;}
+            .sitios{display: none;}
+            .nav{grid-column:8/13;gap:10px;}
+            .logo .titulo{font-size: 25px;}
+            /**/
+            
+            .parrafo1{width: 300px;margin:0px 0px;;}
+
+            .contenedor2{display: flex;flex-wrap: wrap;margin: 0px 0px;}
+            /**/
+            .slider{width:100%;margin: 0px 0px;height:100px;}
+            .sliderxx ulxx{width:100%;margin: 0px 0px;}/*height:100px;*/
+            .contenedor2 .parrafo1 .wasap .img-wasap{height:20px;width: 20px;}
+            .img-galeria{height:200px;}
+            .contenedor-categorias{display:block;margin:0 2px;}
+            .boton-categorias{width:80px;height:20px;font-size:10px;}
+            .contenedor-galeria {grid-template-columns: repeat(2,1fr);margin:5px;} /*background-color: rgb(145, 8, 122);*/
+            p{font-size: 12px;}
+            h3{font-size: 15px;}
+            .logo{grid-column: 1/2;}
+            .img-cat{width:70px;height:30px;border-radius: 10px;}
+            /**################################################**/
+        }
+        /*######################*/
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 50px;
+        }
+
+        .grid-item {
+            text-align: center;
+            
+        }
+
+        .grid-item img {
+            max-width: 100%;
+        }
+
+        /*#############*/
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            
+        }
+
+        .gallery-item {
+            margin: 10px;
+            text-align: center;
+          
+        }
+
+        .gallery-item a img {
+            max-width: 100%;
+            width:600px;
+            height: 200px;
+            
+        }
+    </style>
+</head>
+<body>
+    <!--#################################-->
+    <div class="contenedor1">  
+        <div class="logo">
+            <div style="display: flex;">
+                <p class="titulo"><b>Bahia.com</b></p>
+                <input style="width:300px;text-align: center;" placeholder="buscar" type="hidden">
+            </div>
+            
+        </div> 
+
+        <div class="nav">
+            {% if session["admin"]==True %}
+            <a href="/registro">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/logo-u.jpg')}}">
+            </a>
+            <a href="/articulos">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/anadir-producto.png')}}">
+            </a>
+
+            <a style="display: flex;align-items: center;" href="/categorias">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/categoria4.png')}}">
+            </a>
+
+            <a style="display: flex;align-items: center;" href="/perfil">
+                <!--<img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/descarga.jpg')}}">-->
+        
+            </a>
+            <a href="/logout">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/cerrar1.png')}}">
+            </a>
+            <a style="display: flex;" href="/carrito">  
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/carrito.png')}}">
+                <p style="background-color:rgb(0, 255, 0);border-radius:80px;color: rgb(0, 0, 0);height:25px;width:30px;text-align: center;font-size:25px;">
+                    {{session['contador']}}
+                </p>
+            </a>
+            
+            {% elif session["admin"]==False %}
+            <a href="/perfil">
+                <!--<img style="width:50px;height:30px;" src="{{url_for('static',filename='images/logos-iconos/perfil1.jpg')}}">-->
+                
+            </a>
+            <a href="/logout">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/cerrar1.png')}}"></img>
+            </a>
+            <a style="display: flex;" href="/carrito">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/carrito.png')}}"></img>
+                <p style="background-color:rgb(0, 255, 0);border-radius:80px;color: rgb(0, 0, 0);height:25px;width:30px;text-align: center;font-size:25px;">
+                    <b>{{session['contador']}}</b>
+                </p>
+            </a>
+            {% else %}
+            <a href="/">INICIO</a>
+            <a href="/login">Login</a>
+            <a href="/registro">Registro</a>
+            {% endif %}
+        </div>
+    </div>
+    <!--##########################################################################################################--> 
+    <!--################################################################################### creditos #######################-->
+        <div class="gallery-container">
+        <div>
+            {% for x in product %}
+
+                {% if x.sub_mujer==1 %}
+                    {% if x.id %}
+                        <img class="img-galeria" src="{{url_for('static',filename='mujer/1blusas/') }}{{x.img1}}">
+                    {% endif %}
+                {% endif %}
+
+                {% if x.sub_mujer==2 %}
+                    {% if x.id %}
+                        <img class="img-galeria" src="{{url_for('static',filename='mujer/2faldas/') }}{{x.img1}}">
+                    {% endif %}
+                {% endif %}
+
+                {% if x.sub_mujer==3 %}
+                    {% if x.id %}
+                        <img class="img-galeria" src="{{url_for('static',filename='mujer/3pantalon/') }}{{x.img1}}">
+                    {% endif %}
+                {% endif %}
+
+                {% if x.sub_mujer==4 %}
+                    {% if x.id %}
+                        <img class="img-galeria" src="{{url_for('static',filename='mujer/4tbaño/') }}{{x.img1}}">
+                    {% endif %}
+                {% endif %}
+
+                {% if x.sub_mujer==5 %}
+                    {% if x.id %}
+                        <img class="img-galeria" src="{{url_for('static',filename='mujer/5short/') }}{{x.img1}}">
+                    {% endif %}
+                {% endif %}
+
+                {% if x.sub_mujer==6 %}
+                    {% if x.id %}
+                        <img class="img-galeria" src="{{url_for('static',filename='mujer/6vestidos/') }}{{x.img1}}">
+                    {% endif %}
+                {% endif %}
+
+                {% if x.sub_mujer==7 %}
+                    {% if x.id %}
+                        <img class="img-galeria" src="{{url_for('static',filename='mujer/7conjuntos/') }}{{x.img1}}">
+                    {% endif %}
+                {% endif %}
+
+                {% if x.sub_mujer==8 %}
+                    {% if x.id %}
+                        <img class="img-galeria" src="{{url_for('static',filename='mujer/8trabajo/') }}{{x.img1}}">
+                    {% endif %}
+                {% endif %}
+
+                {% if x.sub_mujer==9 %}
+                    {% if x.id %}
+                        <img class="img-galeria" src="{{url_for('static',filename='mujer/9chaquetas/') }}{{x.img1}}">
+                    {% endif %}
+                {% endif %}
+
+                {% if x.sub_mujer==10 %}
+                    {% if x.id %}
+                        <img class="img-galeria" src="{{url_for('static',filename='mujer/10zapatos/') }}{{x.img1}}">
+                    {% endif %}
+                {% endif %}
+
+                {% if x.sub_mujer==11 %}
+                    {% if x.id %}
+                        <img class="img-galeria" src="{{url_for('static',filename='mujer/11accesorios/') }}{{x.img1}}">
+                    {% endif %}
+                {% endif %}
+
+                {% if x.sub_mujer==12 %}
+                    {% if x.id %}
+                        <img class="img-galeria" src="{{url_for('static',filename='mujer/12maquillaje/') }}{{x.img1}}">
+                    {% endif %}
+                {% endif %}
+
+            {% endfor %}
+            <!--################################################################-->
+            
+            <!--################################################################-->
+            <div style="display: flex;text-align: center;gap:20px;justify-content: center;">
+                <p>{{product.nombre}}</p>
+                <p>$ {{product.precio}}</p>
+                <p>stock{{product.stock}}</p>
+                
+            </div>
+            <div style="text-align: center;">
+                <p>{{product.descripcion}}</p>
+                <p>promocion  2 x 1</p>
+            </div>
+            
+
+            {% if session["admin"]==True or session["admin"]==False  %}
+
+            <form class="form" method="post" action="/detalles/{{product.id}}">
+                <input type="hidden" name="csrf_token" value = "{{ csrf_token() }}" />
+                <input type="hidden" name="product" value="{{ product.id }}">
+                <!--<input type="hidden" name="id" value="id" />-->
+                <!--<input type="hidden" name="nombre" value="" />-->
+                <input style="width:30px;height:20px;" type="hidden" name="cantidad" value="1" min="1" max="9" />
+
+                
+                <div style="display: flex;justify-content: center;">
+                    <!--<input style="width:30px;height:20px;" type="number" name="cantidad" value="1" min="1" max="9" />-->
+                    <button style="display:flex;justify-content: center;align-items: center;width:120px;height:25px;font-size:12px;border: none;cursor: pointer;background-color: rgb(40, 206, 170);color:black;border-radius:20px;">
+                        <img style="width:25px;height:20px;" src="{{url_for('static',filename='images/logos-iconos/carrito.png')}}">
+                        Agregar
+                    </button>
+                </div>
+            </form>
+            {% else %}
+            <div style="display: flex;justify-content: center;">
+                <a href="/login">
+                <button style="display:flex;justify-content: center;align-items: center;width:120px;height:25px;font-size:12px;border: none;cursor: pointer;background-color: rgb(40, 206, 170);color:black;border-radius:20px;">
+                    <img style="width:25px;height:20px;" src="{{url_for('static',filename='images/logos-iconos/carrito.png')}}">
+                    Agregar
+                </button>
+                </a>
+            </div>
+            {% endif %}
+        </div>
+        </div>  
+       
+</body>
+</html>
+
+

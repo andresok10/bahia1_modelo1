@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            text-decoration: none;
+            list-style: none;
+            padding: 0px;
+            outline: none;
+            margin: 0px 0px;
+        }
+
+        body {
+            padding: 0px 0px;
+            background: rgb(255, 255, 255);
+            margin: 0px 20px;
+        }
+
+
+        p {
+            font-size: 18px;
+        }
+
+        input {
+            width: 100%;
+            height: 20px;text-align: center;
+        }
+
+        p {
+            margin: 0px 10px
+        }
+
+        .a {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0px;
+
+        }
+
+        @media screen and (max-width:900px) {
+            .a {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex;width:100%; background-color: aqua;">
+        <div style="width: 50%;background-color: rgb(71, 211, 113); text-align:center">
+            <p>aaa</p>
+        </div>
+        <div style="width: 50%;background-color: rgb(197, 211, 71); text-align:center">
+            <p>aaa</p>
+        </div>
+
+    </div>
+
+    <div style="width: 100%;text-align:center;justify-content:center;margin:0px 0px;">
+        <div style="width: 50%;">
+            <a href="/">ir a inicio</a>
+            <a href="/cat">addcategoria</a>
+        </div>
+    </div>
+
+    <div style="display: flex;text-align:center;justify-content:center;">
+        {% if not catid %}
+        <form style="width:40%; text-align:center;justify-content:center;" action="/add_cat" method="post">
+            <p>Agregar categoria</p>
+            <p style="background-color: aquamarine;">{{msg}}</p>
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+            <input type="text" name="nombre" placeholder="categoría">
+            <!--<input type="submit" value="Agregar categoría">-->
+            <button style="width: 100px;">agregar</button>
+        </form>
+        {% else %}
+        <form action="" method="post">
+            <p>Actualizar categoria</p>
+            <p style="background-color: aquamarine;">{{msg}}</p>
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+            <input type="text" name="nombre" value="{{catid.nombre}}">
+            <!--<input type="submit" value="Actualizar categoría">-->
+            <button type="submit">actualizar</button>
+        </form>
+        {% endif %}
+    </div>
+
+    <div style="display: flex;text-align:center;justify-content:center;">
+        {% if not subcatid %}
+        <form action="/add_subcat" method="post">
+            <p>Agregar subcategoria</p>
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+            <input type="text" name="nombre" placeholder="subcategoría">
+            <input type="text" name="catidx" placeholder="id_categoria">
+            <input type="submit" value="Agregar categoría">
+        </form>
+        {% else %}
+        <form action="" method="post">
+            <p>Actualizar subcategoria</p>
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+            <input type="text" name="nombre" value="{{subcatid.nombre}}">
+            <input type="text" name="catidx" value="{{subcatid.catid}}">
+            <input type="submit" value="Actualizar categoría">
+        </form>
+        {% endif %}
+    </div>
+
+    <!--###################################################################################################-->
+    <br>
+    <div class="a">
+        <div style="display: flex;justify-content:center">
+            <div style="margin:0px 20px">
+                <div style="width: 100%;text-align:center">
+                    <p>Categoria Mujer</p>
+                </div>
+                <table border="1px" style="width:400px;">
+                    <tr>
+                        {% for x in catx %}
+                        {% if x.id==1 %}
+                        <th><p>categoria{{x.id}}</p></th>
+                        <th>{{x.nombre}}</th>
+                        
+                        <td>
+                            <div style="display: flex;">
+                                <a href="/cat/{{x.id}}">
+                                    <img style="width:25px;height:20px;margin-left:10px;"
+                                        src="{{url_for('static',filename='logos-iconos/editar1.png')}}"
+                                        title="editar">
+                                </a>
+                                <a href="/delete_cat/{{x.id}}">
+                                    <img style="width:25px;height:20px;margin-left:1px;"
+                                        src="{{url_for('static',filename='logos-iconos/borrar1.png')}}"
+                                        title="borrar">
+                                </a>
+                            </div>
+                        </td>
+                        {% endif %}
+                        {% endfor %}
+                    </tr>
+
+                    <tr>
+                        <th>id_categoria</th>
+                        <th>nombre</th>
+                    </tr>
+
+                    {% for x in subcatx %}
+                    {% if x.catid==1 %}
+                    <tr ALIGN=center>
+                        <td>{{x.catid}}</td>
+                        <td>{{x.nombre}}</td>
+
+                        <td>
+                            <div style="display: flex;">
+                                <a href="/subcat/{{x.id}}">
+                                    <img style="width:25px;height:20px;margin-left:10px;"
+                                        src="{{url_for('static',filename='logos-iconos/editar1.png')}}"
+                                        title="editar">
+                                </a>
+                                <a href="/delete_subcat/{{x.id}}">
+                                    <img style="width:25px;height:20px;margin-left:1px;"
+                                        src="{{url_for('static',filename='logos-iconos/borrar1.png')}}"
+                                        title="borrar">
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                    <!--###########-->
+                </table>
+
+            </div>
+        </div>
+        <!--#####################################################################################################################-->
+        <div style="display: flex;justify-content:center">
+            <div style="margin:0px 20px">
+                <div style="width: 100%;text-align:center">
+                    <p>Categoria Hmbre</p>
+                </div>
+                <table border="1px" style="width:400px;">
+                    <tr>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>id_categoria</th>
+                        <th>nombre</th>
+                    </tr>
+
+                    {% for x in subcatx %}
+                    {% if x.catid==2 %}
+                    <tr ALIGN=center>
+                        <td>{{x.catid}}</td>
+                        <td>{{x.nombre}}</td>
+
+                        <td>
+                            <div style="display: flex;">
+                                <a href="/subcat/{{x.id}}">
+                                    <img style="width:25px;height:20px;margin-left:10px;"
+                                        src="{{url_for('static',filename='logos-iconos/editar1.png')}}"
+                                        title="editar">
+                                </a>
+                                <a href="/delete_subcat/{{x.id}}">
+                                    <img style="width:25px;height:20px;margin-left:1px;"
+                                        src="{{url_for('static',filename='logos-iconos/borrar1.png')}}"
+                                        title="borrar">
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                    <!--###########-->
+                </table>
+
+            </div>
+        </div>
+        <!--############################-->
+    </div>
+
+    <!--#######################################################################################################################-->
+    <!--#########################################################################################################################-->
+    <div class="a">
+        <div style="display: flex;justify-content:center">
+            <div style="margin:0px 20px">
+                <div style="width: 100%;text-align:center">
+                    <p>Categoria Niño</p>
+                </div>
+                <table border="1px" style="width:400px;">
+                    <tr>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>id_categoria</th>
+                        <th>nombre</th>
+                    </tr>
+
+                    {% for x in subcatx %}
+                    {% if x.catid==3 %}
+                    <tr ALIGN=center>
+                        <td>{{x.catid}}</td>
+                        <td>{{x.nombre}}</td>
+
+                        <td>
+                            <div style="display: flex;">
+                                <a href="/subcat/{{x.id}}">
+                                    <img style="width:25px;height:20px;margin-left:10px;"
+                                        src="{{url_for('static',filename='logos-iconos/editar1.png')}}"
+                                        title="editar">
+                                </a>
+                                <a href="/delete_subcat/{{x.id}}">
+                                    <img style="width:25px;height:20px;margin-left:1px;"
+                                        src="{{url_for('static',filename='logos-iconos/borrar1.png')}}"
+                                        title="borrar">
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                    <!--###########-->
+                </table>
+
+            </div>
+        </div>
+        <!--#####################################################################################################################-->
+        <div style="display: flex;justify-content:center">
+            <div style="margin:0px 20px">
+                <div style="width: 100%;text-align:center">
+                    <p>Categoria Niña</p>
+                </div>
+                <table border="1px" style="width:400px;">
+                    <tr>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>id_categoria</th>
+                        <th>nombre</th>
+                    </tr>
+
+                    {% for x in subcatx %}
+                    {% if x.catid==4 %}
+                    <tr ALIGN=center>
+                        <td>{{x.catid}}</td>
+                        <td>{{x.nombre}}</td>
+
+                        <td>
+                            <div style="display: flex;">
+                                <a href="/subcat/{{x.id}}">
+                                    <img style="width:25px;height:20px;margin-left:10px;"
+                                        src="{{url_for('static',filename='logos-iconos/editar1.png')}}"
+                                        title="editar">
+                                </a>
+                                <a href="/delete_subcat/{{x.id}}">
+                                    <img style="width:25px;height:20px;margin-left:1px;"
+                                        src="{{url_for('static',filename='logos-iconos/borrar1.png')}}"
+                                        title="borrar">
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                    <!--###########-->
+                </table>
+
+            </div>
+        </div>
+        <!--############################-->
+    </div>
+
+</body>
+
+</html>

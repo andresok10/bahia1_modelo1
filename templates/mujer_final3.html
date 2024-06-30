@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {text-decoration: none;list-style: none;outline: none;padding: 0px 0px;margin:0px 0px;}
+
+        /*##########################################################################*/
+        .contenedor1{display: flex;width:100%;text-align: center;}
+            .cont_nav{width:78%;display: flex;margin: 5px 0px;justify-content: flex-end;}
+            .cont_nav a{margin:0px 10px;}
+            .img_nav{width: 35px;height: 40px;border-radius:10px;}
+
+            .cont_logo{width:20%;font-size: 35px;margin-left: 20px;}
+        /*##########################################################################*/
+        .cat{display: flex;width:100%;text-align: center;justify-content: center;}
+            .a_cat{font-size: 20px;margin-right:30px;}
+        /*##########################################################################*/
+        .cont1_caja100{display: flex;justify-content:center;height:220px;}
+            .caja_desc_30 {display:block;align-self:center;background-color: blueviolet;}
+            .a_caja1{background-color: #9fdaac;display: flex;width:350px;text-align: center;
+                justify-content: center;flex-wrap: wrap;margin:5px 0px;
+            border-radius:20px;height:100px;}
+            .a_caja2{background-color: #d4e5f0;display: flex;width:350px;text-align: center;
+                justify-content: center;flex-wrap: wrap;margin:5px 0px;
+            border-radius:20px;height:100px;}
+            
+            .a_caja3{background-color: #f7ddc9;display: flex;width:350px;text-align: center;
+                justify-content: center;flex-wrap: wrap;margin:5px 0px;
+            border-radius:20px;height:65px;}
+        /*##########*/
+        .cont_img40{width:40%;margin-left:3px;margin-right:3px;}
+            .img_slider{width:100%;height:220px;}
+        /*##########*/
+        .super_ofertas1 {display:block;}
+            .a1q{background-color: rgb(240, 196, 196);display:flex;width:350px;text-align:center;flex-wrap: wrap;}
+            .img_ofertas_1 {width:112px;height:80px;margin-left:2px;margin-right:2px;}
+        /*##########################################################################*/
+        .subcat_adicional {display:flex; width:100%;justify-content:center;margin-top:10px;flex-wrap:wrap;}
+            .caja_subcat_adicional{justify-content: center;margin-right:10px;}
+            .img_subcat_adicional{width:120px;height:98px;}
+            .pp_subcat_adicional{background-color: black;color:white;text-align:center;}
+
+        .super_ofertas11 {display:none;}
+            .p11{display:none; width:100%;justify-content: center;margin-top:10px; background-color: rgb(235, 236, 173)}
+            .a1qq{display:flex;width:100%;justify-content: center;text-align:center;flex-wrap:wrap;background-color: rgb(239, 241, 83);}
+            .img_ofertas_11 {width:112px;height:80px;margin-left:2px;margin-right:2px;}
+
+        .ventas_flash {display:flex;justify-content: center;text-align: center;margin-top:10px;background-color: rgb(245, 233, 165);}
+            .p_ventas_flash{display: flex;width:100%;justify-content: center;margin-top:10px; background-color: rgb(235, 236, 173)}
+            .a_ventas_flah{width:100%;justify-content: center;text-align:center;flex-wrap:wrap; background-color: rgb(239, 241, 83);}
+            .img_ventas_flash {width:112px;height:80px;margin-right:2px;}
+
+        .super_ofertas111 {display:none;}
+            .p111{display:none; width:100%;justify-content: center;margin-top:10px;background-color: #9fdaac;}
+            .a1qqq{display:flex;width:100%;justify-content: center;text-align:center;flex-wrap:wrap;background-color: #9fdaac;}
+            .img_ofertas_111 {width:112px;height:80px;margin-left:2px;}
+
+        /*##########################################################################*/
+        .cont2_caja100{display:none;width:100%;justify-content:center;text-align:center;
+            margin-top:10px;background-color: #9fdaac;}
+        /*############*/
+        .caja50_50{display:none;width:100%;}
+        .a1qqq2{display:flex;width:100%;justify-content: center;text-align:center;flex-wrap:wrap;}
+        .img_ofertas_1111{width:60px;height:80px;margin-right:2px;}
+        /*##########################################################################*/
+        .subcat{display:flex;width:100%;text-align:center;justify-content:center;margin-top:10px;}
+            .img-subcat{width:70px;height:35px;border-radius:10px;margin-right:10px;}
+        /*##########################################################################*/
+        .precio{font-size:12px;}
+
+        .aa{display: flex;width:100%;justify-content: center;background-color: #7ac000;}
+        .aa a{flex-wrap: wrap;}
+        /**/
+        .cont_galeria{display: flex;width: 100%;justify-content: center;height:auto;flex-wrap: wrap;}
+            .caja_galeria{margin:0px 10px;margin-bottom: 10px;}
+            .datos_producto{display: flex;text-align: center;gap:20px;justify-content: center;}
+            .img_galeria{width:350px; height:220px;margin-top:5px;}
+        /**/
+        @media screen and (max-width:1000px) {
+            .super_ofertas1 {display:none;}
+            .p11{display:flex;}
+            .super_ofertas11{display: block;}
+            .caja50_50{display: none;} 
+        }
+
+        @media screen and (max-width:800px) {
+            .cont_nav{width:78%;display: flex;margin:2px 0px;justify-content: flex-end;}
+            .cont_nav a{margin:0px 5px;}
+            .img_nav{width: 30px;height:30px;border-radius:10px;}
+            /*######*/
+            .cont_logo{width:20%;font-size:25px;margin-left: 20px;}
+            /*######################################################*/
+            .caja_desc_30 {display: none;}
+            .p11{display: none;}
+            .super_ofertas11{display: none;}
+            .super_ofertas111{display: block;} 
+            .p111{display: flex;margin-top:5px;}
+            
+            .cont1_caja100{height:190px;}
+            .cont_img40{width:100%;margin-left:0px;margin-right:0px;}
+            .img_slider{width:100%;height:190px;}
+            
+            .cont2_caja100{display:flex;margin-top:5px;}
+            .caja50_50{display:flex;width:100%;margin-top:5px;}
+
+            .subcat_adicional{margin-top:2px;}
+            .caja_subcat_adicional{justify-content: center;margin-right:1px;}
+                .img_subcat_adicional{width:84px;height:100px;}
+
+            .img_ofertas_11 {width:75px;height:88px;}
+
+            .img_ofertas_111 {width:75px;height:88px;}
+
+            .img_ofertas_1111 {width:82px;height:88px;}
+
+            .subcat{flex-wrap: wrap;}
+            .img-subcat{width:60px;margin-right:5px;}
+
+            .img_ventas_flash {width:80px;height:80px;}
+        }      
+       
+    </style>
+</head>
+<body>
+    <div class="contenedor1">
+        <div class="cont_logo">
+            <div style="display: flex;">
+                <p class="titulo"><b>Bahia.com</b></p>
+                <input style="width:300px;text-align: center;" placeholder="buscar" type="hidden">
+            </div>
+        </div>
+
+        <div class="cont_nav">
+            {% if session["admin"]==True %}
+            <a href="/registro">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/logo-u.jpg')}}">
+            </a>
+            <a href="/articulos">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/anadir-producto.png')}}">
+            </a>
+
+            <a href="/cat">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/categoria4.png')}}">
+            </a>
+
+            <a href="/perfil">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/perfil1.jpg')}}">
+            </a>
+
+            <a href="/historial_pedidos">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/pedido.jpg')}}">
+            </a>
+
+            <a href="/cerrar">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/cerrar1.png')}}">
+            </a>
+
+            <a style="display: flex;" href="/carrito">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/carrito.png')}}">
+                <p
+                    style="background-color:rgb(0, 255, 0);border-radius:80px;color: rgb(0, 0, 0);height:25px;width:30px;text-align: center;font-size:25px;">
+                    {{session['contador']}}
+                </p>
+            </a>
+
+            {% elif session["admin"]==False %}
+            
+            <a href="/perfil">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/perfil1.jpg')}}">
+            </a>
+
+            <a href="/historial_pedidos">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/pedido.jpg')}}">
+            </a>
+
+            <a href="/cerrar">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/cerrar1.png')}}">
+            </a>
+
+            <a style="display: flex;" href="/carrito">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/carrito.png')}}">
+                <p
+                    style="background-color:rgb(0, 255, 0);border-radius:80px;color: rgb(0, 0, 0);height:25px;width:30px;text-align: center;font-size:25px;">
+                    <b>{{session['contador']}}</b>
+                </p>
+            </a>
+            {% else %}
+            <a href="/login">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/login.png')}}" title="Login / Register">
+            </a>
+            <a href="/historial_pedidos">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/favorito.png')}}">
+            </a>
+
+            <a style="display: flex;" href="/carrito">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/carrito.png')}}">
+                <p
+                    style="background-color:rgb(0, 255, 0);border-radius:80px;color: rgb(0, 0, 0);height:25px;width:30px;text-align: center;font-size:25px;">
+                    <b>{{session['contador']}}</b>
+                </p>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+<!--##############################################################################-->
+<!--<div class="cat">
+    {% for x in cat1 %}
+    <a class="a_cat" href="{{ url_for('fun_inicio.inicio1', catid=x.id) }}">
+        { x.nombre }
+    </a>
+    {% endfor %}
+</div>-->
+
+<div class="cat">
+    <a class="a_cat" href="/inicio_uno">Mujer</a>
+    <a class="a_cat" href="/inicio_dos">hombre</a>
+    <a class="a_cat" href="">Niña</a>
+    <a class="a_cat" href="">Niño</a>
+</div>
+<!--##############################################################################-->
+<div class="cont1_caja100">
+    <div class="caja_desc_30">
+        <a class="a_caja1" href="">
+            <div style="display: block;">
+                <p style="font-size:18px;"><b>Recien llegados</b></p>
+                <div style="display: flex;">
+                    <img style="width:150px;height:60px" src="{{url_for('static',filename='iconos/slider1.png/')}}">
+                    <img style="width:150px;height:60px" src="{{url_for('static',filename='iconos/slider1.png/')}}">
+                </div>
+            </div>
+        </a>
+        <a class="a_caja2" href="">
+            <div style="display: block;">
+                <p><b>Hasta 70% de Dscto</b></p>
+                <div style="display: flex;">
+                    <img style="width:150px;height:60px" src="{{url_for('static',filename='iconos/slider1.png/')}}">
+                    <img style="width:150px;height:60px" src="{{url_for('static',filename='iconos/slider1.png/')}}">
+                </div>
+            </div>
+        </a>
+        <!--<a class="a_caja3" href="">
+            <div style="display: block;">
+                <p><b>Compra 2 lleva 1 de Ellos</b></p>
+            <p>Al 50% DE DCTO.</p>
+            <p>Compra ahora</p>
+            </div>
+        </a>-->
+    </div>
+    <!--###################################################-->
+    <div class="cont_img40">
+        <!--<img class="imgx" src="C:/Practicas-Deybi/www/RENDER/bahia3_partes_sqlalchemy/static/ropa/mujer/blusas/blusa3.jpg" alt="">-->
+        <img class="img_slider" src="{{url_for('static',filename='iconos/slider1.png/')}}">
+                <!--<img class="img-cat" src="static/subcat_mujer/{x.img1}" alt="">-->
+    </div>
+    <!--###################################################-->
+        <div class="super_ofertas1">
+            <p style="width:350px;background-color: rgb(235, 165, 165)">
+                Super Ofertas
+                <img style="width:20px;height:20px" src="{{url_for('static',filename='iconos/hot2.png/')}}">
+            </p>
+            <div style="display:flex;">
+                <a class="a1q" href="">
+                    <div>
+                        <img class="img_ofertas_1" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                        <p class="precio">$ 20</p>
+                    </div>
+                    <div>
+                        <img class="img_ofertas_1" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                        <p class="precio">$ 20</p>
+                    </div>
+                    <div>
+                        <img class="img_ofertas_1" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                        <p class="precio">$ 20</p>
+                    </div>
+                    <div>
+                        <img class="img_ofertas_1" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                        <p class="precio">$ 20</p>
+                    </div>
+                    <div>
+                        <img class="img_ofertas_1" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                        <p class="precio">$ 20</p>
+                    </div>
+                    <div>
+                        <img class="img_ofertas_1" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                        <p class="precio">$ 20</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+<!--################################################################-->
+    <div class="subcat_adicional">
+        <div class="caja_subcat_adicional">
+            <img class="img_subcat_adicional" src="{{url_for('static',filename='subcat_mujer/chaqueta6.webp')}}">
+            <p class="pp_subcat_adicional">Diario</p>
+        </div>
+        <div class="caja_subcat_adicional">
+            <img class="img_subcat_adicional" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+            <p class="pp_subcat_adicional">Paseo</p>
+        </div>
+        <div class="caja_subcat_adicional">
+            <img class="img_subcat_adicional" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+            <p class="pp_subcat_adicional">Trabajo</p>
+        </div>
+        <div class="caja_subcat_adicional">
+            <img class="img_subcat_adicional" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+            <p class="pp_subcat_adicional">Playa</p>
+        </div>
+        <div class="caja_subcat_adicional">
+            <img class="img_subcat_adicional" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+            <p class="pp_subcat_adicional">Fiesta</p>
+        </div>
+        <div class="caja_subcat_adicional">
+            <img class="img_subcat_adicional" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+            <p class="pp_subcat_adicional">$ 20</p>
+        </div>
+    </div>
+<!--############################################################################-->
+<div class="subcat">
+    {% if sub1 %}
+    {% for x in sub1 %}
+    <a href="/inicio_uno/{{x.id}}">
+        <img class="img-subcat" src="{{url_for('static',filename='subcat_mujer/') }}{{x.img1}}">
+        <p style="display:block;width:68px;font-size:12px">{{ x.nombre }}</p>
+    </a>
+    {% endfor %}   
+    {% endif %}    
+</div>
+<!--#############################################################################-->
+<div class="p_ventas_flash">
+    <p>Ventas Flash</p>
+    <img style="width:20px;height:20px" src="{{url_for('static',filename='iconos/hot2.png/')}}">
+</div>
+    
+<div class="ventas_flash">
+    <div>
+        <a href="">
+            <img class="img_ventas_flash" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+            <p class="precio">$ 20</p>
+        </a>            
+    </div>
+    <div>
+        <a href="">
+            <img class="img_ventas_flash" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+            <p class="precio">$ 20</p>
+        </a>            
+    </div>
+    <div>
+        <a href="">
+            <img class="img_ventas_flash" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+            <p class="precio">$ 20</p>
+        </a>            
+    </div>
+    <div>
+        <a href="">
+            <img class="img_ventas_flash" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+            <p class="precio">$ 20</p>
+        </a>            
+    </div>
+    <div>
+        <a href="">
+            <img class="img_ventas_flash" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+            <p class="precio">$ 20</p>
+        </a>            
+    </div>
+</div>
+<!--########-->
+<div class="p11">
+    <p>Super Ofertas</p>
+    <img style="width:20px;height:20px" src="{{url_for('static',filename='iconos/hot2.png/')}}">
+</div>
+
+<div class="super_ofertas11">
+    <div style="display:flex;justify-content:center;">
+            <a class="a1qq" href="">
+                <div>
+                    <img class="img_ofertas_11" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                    <p class="precio">$ 20</p>
+                </div>
+                <div>
+                    <img class="img_ofertas_11" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                    <p class="precio">$ 20</p>
+                </div>
+                <div>
+                    <img class="img_ofertas_11" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                    <p class="precio">$ 20</p>
+                </div>
+                <div>
+                    <img class="img_ofertas_11" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                    <p class="precio">$ 20</p>
+                </div>
+                <div>
+                    <img class="img_ofertas_11" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                    <p class="precio">$ 20</p>
+                </div>
+                <div>
+                    <img class="img_ofertas_11" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                    <p class="precio">$ 20</p>
+                </div>
+            </a>
+        </div>
+    </div>
+<!--####################################################################-->
+<!--<div class="p111">
+    <p><b>Recien llegados</b></p>
+    <img style="width:20px;height:20px" src="{{url_for('static',filename='iconos/hot2.png/')}}">
+</div>-->
+<!--##########-->
+<!--<div class="super_ofertas111">
+    <div style="display:flex;justify-content:center;">
+        <a class="a1qqq" href="">
+            <div>
+                <img class="img_ofertas_111" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                <p>$ 20</p>
+            </div>
+            <div>
+                <img class="img_ofertas_111" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                <p>$ 20</p>
+            </div>
+            <div>
+                <img class="img_ofertas_111" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                <p>$ 20</p>
+            </div>
+            <div>
+                <img class="img_ofertas_111" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                <p>$ 20</p>
+            </div>
+            <div>
+                <img class="img_ofertas_111" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                <p>$ 20</p>
+            </div>
+            <div>
+                <img class="img_ofertas_111" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                <p>$ 20</p>
+            </div>
+        </a>
+    </div>
+</div>-->
+<!--<div class="aa">
+    <div style="display:flex;width:50%;justify-content:end;background-color: #9fdaac;">
+        <a href="">
+            <img class="img_ventas_flash" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+            <p class="precio">$ 20</p>
+        </a>         
+        <a href="">
+            <img class="img_ventas_flash" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+            <p class="precio">$ 20</p>
+        </a>
+        <a href="">
+            <img class="img_ventas_flash" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+            <p class="precio">$ 20</p>
+        </a>
+    </div>
+    
+    <div style="display:flex;width:50%;background-color: #c49fda;">
+        <a href="">
+            <img class="img_ventas_flash" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+            <p class="precio">$ 20</p>
+        </a>         
+        <a href="">
+            <img class="img_ventas_flash" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+            <p class="precio">$ 20</p>
+        </a>
+        <a href="">
+            <img class="img_ventas_flash" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+            <p class="precio">$ 20</p>
+        </a>
+    </div>
+</div>-->  
+
+<div class="caja50_50">
+    <div style="width:50%;background-color: #9fdaac">
+        <p style="text-align: center;">Recien llegados</p>
+        <a class="a1qqq2" href="">
+            <div>
+                <img class="img_ofertas_1111" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                <p class="precio">$ 20</p>
+            </div>
+            <div>
+                <img class="img_ofertas_1111" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                <p class="precio">$ 20</p>
+            </div>
+        </a>
+    </div>
+
+    <div style="width:50%;background-color: rgb(240, 196, 196)">
+        <p style="text-align: center;">Super Ofertas</p>
+        <a class="a1qqq2" href="">
+            <div>
+                <img class="img_ofertas_1111" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                <p class="precio">$ 20</p>
+            </div>
+
+            <div>
+                <img class="img_ofertas_1111" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                <p class="precio">$ 20</p>
+            </div>
+        </a>
+    </div>
+</div>
+<!--#########################################################################-->
+<div class="caja50_50">
+    <div style="width:50%;background-color: #c5def3;">
+        <p style="text-align: center;">Hasta 70% de Dscto</p>
+        <a class="a1qqq2" ref="">
+            <div>
+                <img class="img_ofertas_1111" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                <p class="precio">$ 20</p>
+            </div>
+            <div>
+                <img class="img_ofertas_1111" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                <p class="precio">$ 20</p>
+            </div>
+        </a>
+    </div>
+
+    <div style="width:50%;background-color:#c5def3;">
+        <p style="text-align: center;">Compra 1 LLeva 3</p>
+        <a class="a1qqq2" href="">
+            <div>
+                <img class="img_ofertas_1111" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                <p class="precio">$ 20</p>
+            </div>
+
+            <div>
+                <img class="img_ofertas_1111" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                <p class="precio">$ 20</p>
+            </div>
+        </a>
+    </div>
+</div>
+<!--###########################################################################33-->
+
+<div class="cont_galeria">
+    {% if art1 %}
+    {% for x in art1 %}
+    <div class="caja_galeria">
+        <a href="/detalles/{{x.id}}">
+            {% if x.id==1 %}
+            <img class="img_galeria" src="{{url_for('static',filename='ropa/mujer/blusas/')}}{{x.img1}}">
+        
+            {% elif x.id==2 %}
+            <img class="img_galeria" src="{{url_for('static',filename='ropa/mujer/pantalon/') }}{{x.img1}}">
+        
+            {% elif x.subcatid==3 %}
+            <img class="img_galeria" src="{{url_for('static',filename='ropa/mujer/zapatos/') }}{{x.img1}}">
+        
+                {% elif x.subcatid==4 %}
+                <img class="img_galeria" src="{{url_for('static',filename='img-ropa/hombre/accesorios/') }}{{x.img1}}">    
+                {% endif %}
+            </a>
+            <div style="display:block;align-self: center;margin:0px opx">
+                <div class="datos_producto">
+                    <p>{{ x.nombre }}</p>
+                    <p>${{x.precio}}</p>
+                    <p>stock{{x.stock}}</p>
+                </div>
+                <!--<div style="justify-content: center;text-align: center;align-items: center;align-content: center;align-self: center;">
+                    <button style="width:25px;height:20px;">Agregar</button>
+                </div>-->
+                
+                {% if session["admin"]==True or session["admin"]==False  %}
+                <form method="post" action="{{ url_for('fun_inicio.inicio1', id=x.subcatid) }}"> <!--inicio-->
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                    <input type="hidden" name="product" value="{{ x.id }}">
+                    <input style="width:30px;height:20px;" type="hidden" name="cantidad" value="1" min="1" max="9" />
+                    <!-- background-color: rgb(40, 206, 170) -->
+                    <!--<div style="display: flex;justify-content: center;text-align: center;align-items: center;align-content: center;align-self: center;">
+                        <img style="width:25px;height:20px;" src="{{url_for('static',filename='iconos/carrito.png')}}">
+                        <input style="border: 0;width:100px;height:25px;border-radius:20px;" type="submit" value="Agregar"> 
+                    </div>-->
+
+                    <div style="display: flex;justify-content: center;">
+                        <button class="boton1" type="submit" onclick="changeColor(this)">
+                            <img style="width:25px;height:20px;" src="{{url_for('static',filename='iconos/carrito.png')}}">
+                            Agregar
+                            <!--<p style="align-self: center;">Agregar</p>-->     <!-- onclick="changeColor(this)" -->    <!-- class="miboton" -->
+                        </button>
+                    </div>
+                </form>
+
+                {% else %}
+                <div style="display: flex;justify-content: center;">
+                    <a href="/login">
+                        <button class="boton1">
+                            <img style="width:25px;height:20px;" src="{{url_for('static',filename='iconos/carrito.png')}}">
+                                Agregar
+                        </button>
+                    </a>
+                </div>
+                {% endif %}
+            </div>         
+        </div>
+        {% endfor %}
+        {% endif %}
+</div>
+
+<!--##################################################################################################################################-->
+    <div style="display: flex;gap: 15px;flex-wrap: wrap;justify-content: center;margin-top:50px;">
+        <a href="productos/producto1.html">
+            <img style="width:360px; height: 200px;margin:0px 0px" src="{{url_for('static',filename='iconos/slider1.png')}}">
+            <p>PYTHON</p>
+        </a>
+        <a href="productos/producto1.html">
+            <img style="width:360px; height: 200px;margin:0px 0px" src="{{url_for('static',filename='/iconos/slider1.png')}}">
+            <p>PYTHON</p>
+        </a>
+        <a href="productos/producto1.html">
+            <img style="width:360px; height: 200px;margin:0px 0px" src="{{url_for('static',filename='/iconos/slider1.png')}}">
+            <p>PYTHON</p>
+        </a>
+    </div>
+
+    <main>
+        <br>
+        <div
+            style="display: grid;grid-template-columns: repeat(12, 1fr);background: gold;width: 100%;height: 100%;align-items: center;">
+            <div style="grid-column: 4/10;text-align: center;">
+                <h1>ACERCA DE:</h1>
+                <p>Somos un grupo de trabajadores con la mas alta capacidad de realizar postres de calidad, Lorem, ipsum
+                    dolor sit amet consectetur adipisicing elit. Distinctio qui eveniet laboriosam nulla dignissimos
+                    quisquam nemo, reprehenderit sapiente aut earum? Quas exercitationem necessitatibus ab corrupti
+                    voluptate temporibus magnam! Saepe, esse.</p>
+            </div>
+        </div>
+        <br>
+    </main>
+
+    <div style="text-align: center;width: 100%;color: rgb(202, 187, 187);">
+        <h1>contactame</h1>
+        <p> TE apreciamos mucho</p>
+        <p>Solo llamanos y te recibimos muy amablemente para que hagas un pedido de tu postre preferido sin novedad.</p>
+        <br>
+        <form style="text-align: center;" method="" action="">
+            <label>NOMBRE</label>
+            <br>
+            <input style="width:300px;border: 5px solid #7ac000;font-size: 20px;text-align: center;padding:8px;"
+                type="text" placeholder="ingresa tu nombre" />
+            <br>
+            <label>Email</label>
+            <br>
+            <input style="width:300px;border: 5px solid #7ac000;font-size: 20px;text-align: center;padding: 8px;"
+                type="text" placeholder="ingresa tu email" />
+            <br>
+            <label>COMENTARIO</label>
+            <br>
+            <textarea style="width:300px;border: 5px solid #7ac000;font-size: 20px;text-align: center;padding:8px;"
+                placeholder="ingresa texto" tabindex="4"></textarea>
+            <br>
+            <input type="submit" value="ENVIAR" />
+        </form>
+        <br>
+        <br>
+    </div>
+
+    <div style="text-align: center;width: 100%;font-size: 15px;color: rgb(192, 177, 177);">
+        <br>
+        <h2>Email</h2>
+        <h2>gdave0930&copy;gmail.com</h2>
+        <h2>Localizacion</h2>
+        <img style="width:30px;height:20px;" src="{{url_for('static',filename='images/iconos/zapato1.png')}}">
+        <h2>via perimetral trinipuerto alado del tia</h2>
+        <img style="width:30px;height:20px;" src="{{url_for('static',filename='images/iconos/zapato2.jpg')}}">
+        <h1>Diseñado por &copy;Deybi Garcia</h1>
+        <br>
+        <br>
+    </div>
+
+    <script>
+        function changeColor(button) {
+            button.classList.toggle("clicked");
+        }
+
+        function changeColorxxx(button) {
+            button.classList.toggle("clicked");
+            // Obtener el formulario padre del botón
+            var form = button.closest(".formx");
+            // Obtener el input oculto que contiene el ID del producto
+            var productInput = form.querySelector("input[name='product']");
+            // Obtener el valor del input
+            var productId = productInput.value;
+
+            // Verificar si el botón tiene la clase 'clicked'
+            if (button.classList.contains("clicked")) {
+                // Si el botón tiene la clase 'clicked', agregar el producto al carrito
+                console.log("Agregar producto al carrito con ID:", productId);
+                // Aquí puedes agregar la lógica para agregar el producto al carrito usando AJAX o un formulario de envío, según tu implementación
+            } else {
+                // Si el botón no tiene la clase 'clicked', quitar el producto del carrito
+                console.log("Quitar producto del carrito con ID:", productId);
+                // Aquí puedes agregar la lógica para quitar el producto del carrito usando AJAX o un formulario de envío, según tu implementación
+            }
+        }
+
+    </script>
+</body>
+</html>

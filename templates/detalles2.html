@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>app-delivery</title>
+    <style>
+        * {text-decoration: none;list-style: none;padding: 0px;outline: none;margin: 0px 0px;}
+        body {padding: 0px 0px;background: rgb(255, 255, 255);margin: 0px 20px;}
+        .contenedor-galeria{display:grid;grid-template-columns:repeat(1fr);gap:10px;margin:0px 0px;justify-content: center;}
+        .img-galeria{height: 400px;width:500px;border-radius:20px;}
+        .p{text-align: center;}
+
+        .contenedor1 {display: grid;grid-template-columns: repeat(12, 1fr);width: 100%;align-items: center;}
+        .logo{grid-column:1/2;}
+        .img1{width:150px;height:50px;}
+        .sitios{grid-column:2/8;}
+        .img2{width:50px;height:40px;;margin:2px 2px;}
+
+        navxxxxx{grid-column:8/13;display: flex;justify-content: flex-end;gap:15px;}
+        .nav{grid-column:8/13;display: flex;justify-content: flex-end;gap:15px;align-items: center;margin:0px 5px;}
+        .img3_nav{width:50px;height:40px;}
+
+        /**###############################################**/
+        @media screen and (max-width:900px) {
+            body{margin:5px 0px;}
+            .contenedor-galeria {grid-template-columns: repeat(1fr);}      
+            
+            .boton-categorias{width:100px;height:30px;font-size:10px;}
+            .img3_nav{width:30px;height:30px;}
+            .img1{width:70px;height:30px;}
+        }
+        /**###############################################**/
+        @media screen and (max-width:760px) {
+            body{margin:1px 0px;}
+            .img1{width:150px;height:30px;margin-left:2px;}
+            .sitios{display: none;}
+            .nav{grid-column:8/13;gap:10px;}
+            .parrafo1{display: none;}
+            .slider{width:100%;}
+            .img-galeria{height:300px;width:400px;}
+            .boton-categorias{width:120px;height:30px;font-size:10px;}
+            .contenedor-galeria {display: flex;margin:50px;}
+            /**################################################**/
+        }
+    </style>
+</head>
+<body>
+    <!--#################################-->
+    <div class="contenedor1">
+        <div class="logo">
+            <img class="img1" src="{{url_for('static',filename='images/logogelatinas.jpg')}}">
+            
+        </div>
+        <div class="sitios">
+            <img class="img2" src="{{url_for('static',filename='images/logos-iconos/fb.png')}}">
+            <img class="img2" src="{{url_for('static',filename='images/logos-iconos/tui.png')}}">
+            <img class="img2" src="{{url_for('static',filename='images/logos-iconos/you.png')}}">
+            <img class="img2" src="{{url_for('static',filename='images/logos-iconos/inst.png')}}">
+        </div>      
+
+        <!--<label for="toggle-1" class="toggle-menu">
+            <img style="width:40px;height:30px;" src="{{url_for('static',filename='images/logos-iconos/menu-responsive.png')}}">
+            <a></a> <a><a> </a>     </a><a> </a></label>
+        <input class="input" type="checkbox" id="toggle-1">-->
+        <div class="nav">
+            {% if current_user.is_authenticated and current_user.is_admin() %}
+            <a href="/registro">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/logo-u.jpg')}}">
+            </a>
+            <a href="/categoria_new">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/logo-u.jpg')}}">
+            </a>
+            <a href="/articulo_new">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/anadir-producto.png')}}">
+            </a>
+
+            <a style="display: flex;align-items: center;" href="/categorias">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/categoria4.png')}}">
+            </a>
+
+            <a style="display: flex;align-items: center;" href="/perfil">
+                {{ current_user.username}}
+                <!--<img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/descarga.jpg')}}">
+                <p style="text-align: center;margin:0px 0px;">{{ current_user.username }}</p>-->
+            </a>
+            <a href="/logout">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/cerrar1.png')}}">
+            </a>
+            <a style="display: flex;" href="/carrito">  
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/carrito.png')}}">
+                <p style="background-color:rgb(0, 255, 0);border-radius:80px;color: rgb(0, 0, 0);height:25px;width:30px;text-align: center;font-size:25px;">
+                    <b>{{num_articulos}}</b>
+                </p>
+            </a>
+            
+            {% elif current_user.is_authenticated %}
+            <a href="/perfil">
+                <!--<img style="width:50px;height:30px;" src="{{url_for('static',filename='images/logos-iconos/perfil1.jpg')}}">-->
+                {{ current_user.username}}
+            </a>
+            <a href="/logout">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/cerrar1.png')}}"></img>
+            </a>
+            <a style="display: flex;" href="/carrito">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/carrito.png')}}"></img>
+                <p style="background-color:rgb(0, 255, 0);border-radius:80px;color: rgb(0, 0, 0);height:25px;width:30px;text-align: center;font-size:25px;">
+                    <b>{{num_articulos}}</b>
+                </p>
+            </a>
+            {% else %}
+            <a href="/">INICIO</a>
+            <a href="/login">Login</a>
+            <a href="/registro">Registro</a>
+            {% endif %}
+        </div>
+    </div>
+    <!--##########################################################################################################--> 
+    <!--################################################################################### creditos #######################-->
+        <div class="contenedor-galeria">
+        <div>
+            <div id="b_image">
+            {% if product.id==1 %}
+            <img id="b_image" class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/blusas-chaquetas-abrigos/') }}{{product.img1}}">
+            {% endif %}
+            {% if product.id==2 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/blusas-chaquetas-abrigos/') }}{{product.img1}}">
+            {% endif %}
+            {% if product.id==3 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/blusas-chaquetas-abrigos/') }}{{product.img1}}">
+            {% endif %}
+            {% if product.id==4 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/blusas-chaquetas-abrigos/') }}{{product.img1}}">
+            {% endif %}
+            <!--################################################################-->
+            {% if product.id==5 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/faldas-vestidos-jeans/') }}{{product.img1}}">
+            {% endif %}
+            {% if product.id==6 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/faldas-vestidos-jeans/') }}{{product.img1}}">
+            {% endif %}
+            {% if product.id==7 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/faldas-vestidos-jeans/') }}{{product.img1}}">
+            {% endif %}
+            {% if product.id==8 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/faldas-vestidos-jeans/') }}{{product.img1}}">
+            {% endif %}
+            <!--################################################################-->
+            {% if product.id == 9 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/calzado/') }}{{product.img1}}">
+            {% endif %}
+            {% if product.id == 10 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/calzado/') }}{{product.img1}}">
+            {% endif %}
+            {% if product.id == 11 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/calzado/') }}{{product.img1}}">
+            {% endif %}
+            {% if product.id == 12 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/calzado/') }}{{product.img1}}">
+            {% endif %}
+            <!--################################################################-->
+            {% if product.id == 13 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/accesorios/') }}{{product.img1}}">
+            {% endif %}
+            {% if product.id == 14 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/accesorios/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 15 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/accesorios/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 16 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/accesorios/') }}{{product.imagen}}">
+            {% endif %}
+            <!--################################################################-->
+            {% if product.id == 17 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/camisas-camisetas/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 18 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/camisas-camisetas/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 19 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/camisas-camisetas/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 20 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/camisas-camisetas/') }}{{product.imagen}}">
+            {% endif %}
+            <!--################################################################-->
+            {% if product.id == 21 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/pantalones/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 22 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/pantalones/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 23 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/pantalones/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 24 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/pantalones/') }}{{product.imagen}}">
+            {% endif %}
+            <!--################################################################-->
+            {% if product.id == 25 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/calzado/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 26 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/calzado/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 27 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/calzado/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 28 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/calzado/') }}{{product.imagen}}">
+            {% endif %}
+            <!--################################################################-->
+            {% if product.id == 29 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/accesorios/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 30 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/accesorios/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 31 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/accesorios/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 32 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/accesorios/') }}{{product.imagen}}">
+            {% endif %}
+            <!--################################################################-->
+            {% if product.id == 33 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/camisas-camisetas/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 34 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/camisas-camisetas/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 35 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/camisas-camisetas/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 36 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/camisas-camisetas/') }}{{product.imagen}}">
+            {% endif %}
+            <!--################################################################-->
+            {% if product.id == 37 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/pantalones/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 38 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/pantalones/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 39 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/pantalones/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 40 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/pantalones/') }}{{product.imagen}}">
+            {% endif %}
+            <!--################################################################-->
+            {% if product.id == 41 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/calzado/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 42 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/calzado/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 43 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/calzado/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 44 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/calzado/') }}{{product.imagen}}">
+            {% endif %}
+            <!--################################################################-->
+            {% if product.id == 45 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/accesorios/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 46 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/accesorios/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 47 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/accesorios/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 48 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/accesorios/') }}{{product.imagen}}">
+            {% endif %}
+            <!--################################################################-->
+            {% if product.id == 49 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/blusas-vestidos/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 50 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/blusas-vestidos/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 51 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/blusas-vestidos/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 52 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/blusas-vestidos/') }}{{product.imagen}}">
+            {% endif %}
+            <!--################################################################-->
+            {% if product.id == 53 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/pantalones/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 54 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/pantalones/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 55 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/pantalones/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 56 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/pantalones/') }}{{product.imagen}}">
+            {% endif %}
+            <!--################################################################-->
+            {% if product.id == 57 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/calzado/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 58 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/calzado/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 59 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/calzado/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 60 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/calzado/') }}{{product.imagen}}">
+            {% endif %}
+            <!--################################################################-->
+            {% if product.id == 61 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/accesorios/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 62 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/accesorios/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 63 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/accesorios/') }}{{product.imagen}}">
+            {% endif %}
+            {% if product.id == 64 %}
+            <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/accesorios/') }}{{product.imagen}}">
+            {% endif %}
+
+        </div>
+            <!--################################################################-->
+            <div style="display: flex;text-align: center;gap:20px;justify-content: center;">
+                <p class="p">{{product.nombre}}</p>
+                <p class="p">{{product.precio}}</p>
+            </div>
+            <p class="p">{{product.descripcion}}</p>
+            <p class="p">promocion  2 x 1</p>
+
+            {% if current_user.is_authenticated %}
+            <form class="form" method="post" action="/detalles/{{product.id}}">
+                <input type="hidden" name="csrf_token" value = "{{ csrf_token() }}" /> 
+                <!--<input type="hidden" name="id" value="id" />-->
+                <!--<input type="hidden" name="nombre" value="" />-->
+                <div style="display: flex;justify-content: center;">
+                    <input style="width:30px;height:20px;" type="number" name="cantidad" value="1" min="1" max="9" />
+                    <button style="display:flex;justify-content: center;align-items: center;width:120px;height:25px;font-size:12px;border: none;cursor: pointer;background-color: rgb(40, 206, 170);color:black;border-radius:20px;">
+                        <img style="width:25px;height:20px;" src="{{url_for('static',filename='images/logos-iconos/carrito.png')}}">
+                        Agregar
+                    </button>
+                </div>
+            </form>
+            {% else %}
+            <div style="display: flex;justify-content: center;">
+                <a href="/login">
+                <button style="display:flex;justify-content: center;align-items: center;width:120px;height:25px;font-size:12px;border: none;cursor: pointer;background-color: rgb(40, 206, 170);color:black;border-radius:20px;">
+                    <img style="width:25px;height:20px;" src="{{url_for('static',filename='images/logos-iconos/carrito.png')}}">
+                    Agregar
+                </button>
+                </a>
+            </div>
+            {% endif %}
+        </div>
+        <div style="display:flex;justify-content: center;align-items: center" id="s_image">
+            <img src="{{url_for('static',filename='images/img-ropa/mujer/blusas-chaquetas-abrigos/') }}{{product.img1}}" width="100" height="100">
+            <img src="{{url_for('static',filename='images/img-ropa/mujer/blusas-chaquetas-abrigos/') }}{{product.img2}}" width="100" height="100">
+            <img src="{{url_for('static',filename='images/img-ropa/mujer/blusas-chaquetas-abrigos/') }}{{product.img3}}" width="100" height="100">
+        </div>
+
+        </div>  
+        
+        
+        <script>
+            var b_image = document.getElementById('b_image');
+            var s_image = document.getElementById('s_image').getElementsByTagName('img');
+             for(var i = 0; i < s_image.length; i++){
+         
+                 s_image[i].addEventListener('click', full_image);
+             }
+             function full_image(){
+                 var ImageSRC = this.getAttribute('src');
+                 b_image.innerHTML = "<img src=" + ImageSRC + " width='400' height='400'>";
+             }
+         </script>
+</body>
+</html>
+
+

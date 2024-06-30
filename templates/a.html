@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cambiar Color de Botón</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .miBoton {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .miBoton.clicked {
+      background-color: #28a745;
+      /* Cambiar a color verde cuando se hace clic */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <button class="miBoton" onclick="toggleColor(this)">Botón 1</button>
+    <button class="miBoton" onclick="toggleColor(this)">Botón 2</button>
+  </div>
+
+  <button class="miBoton" onclick="toggleColor(this)">Botón 3</button>
+
+  <script>
+    function toggleColor(button) {
+      button.classList.toggle("clicked");
+    }
+
+  </script>
+</body>
+
+</html>

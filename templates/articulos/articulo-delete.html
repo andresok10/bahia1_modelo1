@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>login</title>
+</head>
+<body style="background-color:rgb(70, 140, 206);font-size: 30px;">
+    <br>
+    <form style="text-align: center;" action=""  method="POST">
+        <input type="hidden" name="csrf_token" value = "{{ csrf_token() }}" />
+        <br>
+        <label>¿Estás seguro de borrar el producto: {{art.nombre}}</label>
+        <br> 
+        <input style="width:200px;height: 50px;" type="submit" name="si" value="si">
+        <br>
+        <a style="color: rgb(21, 255, 0);" href="/articulos">NO</a>
+        <br>
+        <br>
+    </form>
+    
+</body>
+
+</html>

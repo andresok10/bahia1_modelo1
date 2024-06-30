@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tienda</title>
+    <!--<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>-->
+</head>
+<body style="background-color:rgb(18, 124, 223);font-size: 30px;">
+    
+    <form style="text-align: center;" action="" method="POST">
+        <h3 style="text-align:center;">Cambio de contraseña de {{current_user.username}}</h3>
+        <input type="hidden" name="csrf_token" value = "{{ csrf_token() }}" /> 
+        
+        <label>Contraseña</label>
+        <input style="width:500px; height:20px;" type="text" name="password" placeholder="ingrese contraseña" required>
+        
+        <input style="width:200px;height: 50px;" type="submit" value="cambiar">
+    </form>
+    
+</body>
+</html>

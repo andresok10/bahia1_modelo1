@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías</title>
+</head>
+<body>
+    <h1>Categorías</h1>
+    <h2>Categorías Principales</h2>
+    <ul>
+        {% for categoria in categorias %}
+        <li>
+            {{ categoria.nombre }}
+            <form action="/agregar_categoria" method="post">
+                <input type="text" name="nombre" placeholder="Nombre de la subcategoría">
+                <input type="hidden" name="padre_id" value="{{ categoria.id }}">
+                <button type="submit">Agregar Subcategoría</button>
+            </form>
+            {% if categoria.subcategorias %}
+            <ul>
+                {% for subcategoria in categoria.subcategorias %}
+                <li>{{ subcategoria.nombre }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    <h2>Agregar Categoría Principal</h2>
+    <form action="/agregar_categoria" method="post">
+        <input type="text" name="nombre" placeholder="Nombre de la categoría principal">
+        <button type="submit">Agregar Categoría Principal</button>
+    </form>
+</body>
+</html>

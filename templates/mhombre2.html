@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">-->
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bahia.comxxxx</title>
+    <style>
+        .aa{display: flex;justify-content: center;background-color: #28a745;}
+        .a{display: flex;font-size: 20px;margin: 0px 50px;}
+
+        * {text-decoration: none;list-style: none;outline: none; margin:0px 0px;}
+        body {padding: 0px 0px;margin: 0px 0px;}
+
+        .bb{display: flex;color: #635d5d;margin-top: 5px;justify-content: center;text-align: center;width:100%;}
+        .imgx{width:90px;height:150px;border-radius:30px;}
+
+        .boton1{display: flex;border: 0;width:100px;height:25px;border-radius:20px;justify-content: center;align-items: center;cursor: pointer;}
+        .boton1.clicked {
+            background-color: #28a745;
+            /* Cambiar a color verde cuando se hace clic */
+        }
+        /*###### boton id #######*/
+        #boton1 {background-color: #c7d8cb;}
+        #boton1.clicked {background-color: #28a745;}
+/*##########################################################################*/
+        .contenedor1{display: flex;width:100%;text-align: center;}
+            .cont_nav{width:78%;display: flex;margin: 5px 0px;justify-content: flex-end;}
+            .cont_nav a{margin:0px 10px;}
+            .img_nav{width: 35px;height: 40px;border-radius:10px;}
+
+            .cont_logo{width:20%;font-size: 35px;margin-left: 20px;}
+
+        .cat{display: flex;width:100%;text-align: center;justify-content: center;}
+        .a{font-size: 20px;margin:0px 50px;}
+
+        .cont2_publicidad1{display: flex;width:100%;justify-content: center;text-align: center;}
+            .oferta1{display:block; width:25%;}
+                .ok1{height:60px;font-size: 14px;background-color: #9fdaac;}
+                .ok2{height:60px;background-color: #d4e5f0;}
+                .ok3{height:60px;background-color: #f7ddc9;}
+
+            .oferta100{display:none;width: 100%;}
+                .ok1xx{width:500px;height:60px;background-color: #9fdaac;}
+                .ok2xx{width:500px;height:60px;background-color: #d4e5f0;}
+                .ok3xx{width:500px;height:60px;background-color: #f7ddc9;}
+            
+            .oferta2{display:block; width:25%;}
+                .ofertas{text-align: center;display:block;background-color: #f7ddc9;}
+                .img_ofertas{width:100px;height:100px}
+
+        .cont3_publicidad1{display: flex;width:100%;}
+            .ofertax{display:flex;width:100%;justify-content: center;}
+                .ok1x{width:500px;height:60px;background-color: #9fdaac;}
+                .ok2x{width:500px;height:60px;background-color: #d4e5f0;}
+                .ok3x{width:500px;height:60px;background-color: #f7ddc9;}
+            
+            .slider {width:40%;text-align: center;overflow: hidden;margin-left:10px;margin-right:10px;}
+            .slider ul {width:400%; text-align: center;display: flex;animation: slide 15s infinite linear;}
+            .img_slider{width:360px; height:200px;margin:0px 0px}
+            .slider .img_slider {width:100%;text-align: center;}
+            @keyframes slide {
+                0% {margin-left: 0;}
+                20% {magin-left: 0;}
+                25% {margin-left: -100%;}
+                45% {margin-left: -100%;}
+                50% {margin-lefrt: -200%;}
+                70% {margin-left: -200%;}
+                75% {margin-left: -300%;}
+                100% {margin-left: -300%;}
+            }
+
+            .cont_cat{display: flex;width:100%;justify-content: center;text-align: center;margin:0px 0px;}
+                .cajita1{width:100%;margin: 0px 10px}
+                .cat1{display: flex;justify-content: center;border-radius:10px;flex-wrap: wrap}
+                .img-cat{width:70px;height:35px;border-radius:10px;margin:5px 5px;}
+
+            .cont_galeria{display: flex;width: 100%;justify-content: center;height:auto;flex-wrap: wrap;}
+                .caja_galeria{margin:0px 10px;margin-bottom: 10px;}
+                .datos_producto{display: flex;text-align: center;gap:20px;justify-content: center;}
+                .img_galeria{width:350px; height:220px;margin-top:5px;}
+
+        @media screen and (max-width:800px) {
+            .cont_cat{display: block;}
+            .cajita1{width:100%;margin: 0px 2px;}
+            .caja_galeria{margin:0px 2px;margin-bottom:5px;}
+            .img_galeria{width:250px;margin-top:10px;}
+    
+            .cont_nav a{margin:0px 2px;}
+            .imgx{width:85px;}
+            .a{display: flex;font-size: 20px;margin: 0px 30px;}
+            .img-cat{width:50px;height:30px;border-radius:10px;margin:5px 2px;}
+            .img_slider{width:300px; height:150px;margin:0px 0px}
+            .slider{width:100%;;margin-left:0px;margin-right:0px;}
+
+            .cont2_publicidad1{display:block;}
+            .oferta1{display: none;}
+
+            .oferta2{display: flex;width:100%;margin: 0px 0px;}
+            .ofertas{width: 100%;}
+
+            .ok1xxx{width:200px;height:50px;background-color: #c1ebcb;}
+            .ok2xxx{width:200px;height:50px;background-color: #aec2da;}
+            .ok3xxxx{width:200px;height:50px;background-color: #90ad60;}
+            .ofertax{display: block;}
+            .img_ofertas{width:81px;height:80px}
+            
+            .oferta100{display:flex;width:100%;background-color: #28a745;}
+            
+            .ok1xx{width:255px;height:50px;background-color: #c1ebcb;}
+            .ok2xx{width:255px;height:50px;background-color: #aec2da;}
+            .ok3xx{width:200px;height:50px;background-color: #90ad60;}
+                
+
+        }
+    </style>
+</head>
+<body>
+    <!--################################-->
+    <div class="contenedor1">
+        <div class="cont_logo">
+            <div style="display: flex;">
+                <p class="titulo"><b>Bahia.com</b></p>
+                <input style="width:300px;text-align: center;" placeholder="buscar" type="hidden">
+            </div>
+        </div>
+
+        <div class="cont_nav">
+            {% if session["admin"]==True %}
+            <a href="/registro">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/logo-u.jpg')}}">
+            </a>
+            <a href="/articulos">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/anadir-producto.png')}}">
+            </a>
+
+            <a href="/cat">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/categoria4.png')}}">
+            </a>
+
+            <a href="/perfil">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/perfil1.jpg')}}">
+            </a>
+
+            <a href="/historial_pedidos">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/pedido.jpg')}}">
+            </a>
+
+            <a href="/cerrar">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/cerrar1.png')}}">
+            </a>
+
+            <a style="display: flex;" href="/carrito">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/carrito.png')}}">
+                <p
+                    style="background-color:rgb(0, 255, 0);border-radius:80px;color: rgb(0, 0, 0);height:25px;width:30px;text-align: center;font-size:25px;">
+                    {{session['contador']}}
+                </p>
+            </a>
+
+            {% elif session["admin"]==False %}
+            
+            <a href="/perfil">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/perfil1.jpg')}}">
+            </a>
+
+            <a href="/historial_pedidos">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/pedido.jpg')}}">
+            </a>
+
+            <a href="/cerrar">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/cerrar1.png')}}">
+            </a>
+
+            <a style="display: flex;" href="/carrito">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/carrito.png')}}">
+                <p
+                    style="background-color:rgb(0, 255, 0);border-radius:80px;color: rgb(0, 0, 0);height:25px;width:30px;text-align: center;font-size:25px;">
+                    <b>{{session['contador']}}</b>
+                </p>
+            </a>
+            {% else %}
+            <a href="/login">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/login.png')}}" title="Login / Register">
+            </a>
+            <a href="/historial_pedidos">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/favorito.png')}}">
+            </a>
+
+            <a style="display: flex;" href="/carrito">
+                <img class="img_nav" src="{{url_for('static',filename='iconos/carrito.png')}}">
+                <p
+                    style="background-color:rgb(0, 255, 0);border-radius:80px;color: rgb(0, 0, 0);height:25px;width:30px;text-align: center;font-size:25px;">
+                    <b>{{session['contador']}}</b>
+                </p>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+
+    <!--############################################################################### categorias ###########################-->
+    <div class="aa">
+        <a class="a" href="/inicio_uno">Mujer</a>
+        <a class="a" href="/inicio_dos">hombre</a>
+        <a class="a" href="">Niña</a>
+        <a class="a" href="">Niño</a>
+    </div>
+    <!--#################################################################-->
+    <div class="cont2_publicidad1">
+        <div class="oferta1">
+            <a style="text-align: center;display:block;" href="">
+                <div class="ok1">
+                    <p><b>Compra 2 lleva 1 de Ellos</b></p>
+                    <p>Al 50% DE DCTO.</p>
+                    <p>Compra ahora</p>
+                </div>
+            </a>
+            <a style="text-align: center;display:block;" href="">
+                <div class="ok2">
+                    <p><b>Compra 2 lleva 1 de Ellos</b></p>
+                    <p>Al 50% DE DCTO.</p>
+                    <p>Compra ahora</p>
+                </div>
+            </a>
+            <a style="text-align: center;display:block;" href="">
+                <div class="ok3">
+                    <p><b>Compra 2 lleva 1 de Elloszz</b></p>
+                    <p>Al 50% DE DCTO.</p>
+                    <p>Compra ahora</p>
+                </div>
+            </a>
+        </div>
+    
+        <div class="slider">
+            <ul>
+                <img class="img_slider" src="{{url_for('static',filename='iconos/slider1.png')}}">
+                <img class="img_slider" src="{{url_for('static',filename='/iconos/slider1.png')}}">
+                <!--<img src="{{url_for('static',filename='images/logogelatinas.jpg')}}">-->
+            </ul>
+        </div>
+
+        <div class="oferta2">
+            <a class="ofertas" href="">
+                <h3>Super Ofertas</h3>
+                <img class="img_ofertas" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                <img class="img_ofertas" src="{{url_for('static',filename='subcat_mujer/vestido4.jpg')}}">
+                <img class="img_ofertas" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                <img class="img_ofertas" src="{{url_for('static',filename='subcat_mujer/vestido4.jpg')}}">
+                <img class="img_ofertas" src="{{url_for('static',filename='subcat_mujer/chaqueta7.jpg')}}">
+                <img class="img_ofertas" src="{{url_for('static',filename='subcat_mujer/vestido4.jpg')}}">
+            </a>
+        </div>
+    </div>
+
+    <div class="oferta100">
+            <a style="text-align: center;display:block;" href="">
+                <div class="ok1xx">
+                    <p><b>Compra 2 lleva 1 de Ellosxx</b></p>
+                    <p>Al 50% DE DCTO.</p>
+                    <p>Compra ahora</p>
+                </div>
+            </a>
+            <a style="text-align: center;display:block;" href="">
+                <div class="ok2xx">
+                    <p><b>Compra 2 lleva 1 de Ellos</b></p>
+                    <p>Al 50% DE DCTO.</p>
+                    <p>Compra ahora</p>
+                </div>
+            </a>
+    </div>
+
+    <!--############################################################################### categorias ###########################-->
+
+    <div class="cont_cat">
+        <div class="cajita1">
+            <div class="cat1">
+                {% for x in sub1 %}
+                <a href="/inicio_dos/{{x.id}}">
+                    <img class="img-cat" src="{{url_for('static',filename='subcat_hombre/')}}{{x.img1}}">
+                    <p>{{x.nombre}}</p>
+                </a>
+                {% endfor %}   
+                   
+            </div>        
+        </div>
+        <!--###################################-->
+    </div>
+
+    <!--######################################################################## galeria ########################################-->
+    
+    <div class="cont_galeria">
+        {% for x in art1 %}
+        <div class="caja_galeria">
+            <a href="/detalles/{{x.id}}">
+                <img class="img_galeria" src="{{url_for('static',filename='ropa/hombre/camisas/') }}{{x.img1}}">    
+            </a>
+            <div style="display:block;align-self: center;margin:0px opx">
+                <div class="datos_producto">
+                    <p>{{ x.nombre }}</p>
+                    <p>${{x.precio}}</p>
+                    <p>stock{{x.stock}}</p>
+                </div>
+                <!--<div style="justify-content: center;text-align: center;align-items: center;align-content: center;align-self: center;">
+                    <button style="width:25px;height:20px;">Agregar</button>
+                </div>-->
+                
+                {% if session["admin"]==True or session["admin"]==False  %}
+                <form method="post" action="{{ url_for('fun_inicio.inicio2', id=x.subcatid) }}"> <!--inicio-->
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                    <input type="hidden" name="product" value="{{ x.id }}">
+                    <input style="width:30px;height:20px;" type="hidden" name="cantidad" value="1" min="1" max="9" />
+                    <!-- background-color: rgb(40, 206, 170) -->
+                    <!--<div style="display: flex;justify-content: center;text-align: center;align-items: center;align-content: center;align-self: center;">
+                        <img style="width:25px;height:20px;" src="{{url_for('static',filename='iconos/carrito.png')}}">
+                        <input style="border: 0;width:100px;height:25px;border-radius:20px;" type="submit" value="Agregar"> 
+                    </div>-->
+
+                    <div style="display: flex;justify-content: center;">
+                        <button class="boton1" type="submit" onclick="changeColor(this)">
+                            <img style="width:25px;height:20px;" src="{{url_for('static',filename='iconos/carrito.png')}}">
+                            Agregar
+                            <!--<p style="align-self: center;">Agregar</p>-->     <!-- onclick="changeColor(this)" -->    <!-- class="miboton" -->
+                        </button>
+                    </div>
+                </form>
+
+                {% else %}
+                <div style="display: flex;justify-content: center;">
+                    <a href="/login">
+                        <button class="boton1">
+                            <img style="width:25px;height:20px;" src="{{url_for('static',filename='iconos/carrito.png')}}">
+                                Agregar
+                        </button>
+                    </a>
+                </div>
+                {% endif %}
+            </div>         
+        </div>
+        {% endfor %}
+    </div>
+    <!--##################################################################################################################################-->
+    <div style="display: flex;gap: 15px;flex-wrap: wrap;justify-content: center;margin-top:50px;">
+        <a href="productos/producto1.html">
+            <img style="width:360px; height: 200px;margin:0px 0px" src="{{url_for('static',filename='iconos/slider1.png')}}">
+            <p>PYTHON</p>
+        </a>
+        <a href="productos/producto1.html">
+            <img style="width:360px; height: 200px;margin:0px 0px" src="{{url_for('static',filename='/iconos/slider1.png')}}">
+            <p>PYTHON</p>
+        </a>
+        <a href="productos/producto1.html">
+            <img style="width:360px; height: 200px;margin:0px 0px" src="{{url_for('static',filename='/iconos/slider1.png')}}">
+            <p>PYTHON</p>
+        </a>
+    </div>
+
+    <main>
+        <br>
+        <div
+            style="display: grid;grid-template-columns: repeat(12, 1fr);background: gold;width: 100%;height: 100%;align-items: center;">
+            <div style="grid-column: 4/10;text-align: center;">
+                <h1>ACERCA DE:</h1>
+                <p>Somos un grupo de trabajadores con la mas alta capacidad de realizar postres de calidad, Lorem, ipsum
+                    dolor sit amet consectetur adipisicing elit. Distinctio qui eveniet laboriosam nulla dignissimos
+                    quisquam nemo, reprehenderit sapiente aut earum? Quas exercitationem necessitatibus ab corrupti
+                    voluptate temporibus magnam! Saepe, esse.</p>
+            </div>
+        </div>
+        <br>
+    </main>
+
+    <div style="text-align: center;width: 100%;color: rgb(202, 187, 187);">
+        <h1>contactame</h1>
+        <p> TE apreciamos mucho</p>
+        <p>Solo llamanos y te recibimos muy amablemente para que hagas un pedido de tu postre preferido sin novedad.</p>
+        <br>
+        <form style="text-align: center;" method="" action="">
+            <label>NOMBRE</label>
+            <br>
+            <input style="width:300px;border: 5px solid #7ac000;font-size: 20px;text-align: center;padding:8px;"
+                type="text" placeholder="ingresa tu nombre" />
+            <br>
+            <label>Email</label>
+            <br>
+            <input style="width:300px;border: 5px solid #7ac000;font-size: 20px;text-align: center;padding: 8px;"
+                type="text" placeholder="ingresa tu email" />
+            <br>
+            <label>COMENTARIO</label>
+            <br>
+            <textarea style="width:300px;border: 5px solid #7ac000;font-size: 20px;text-align: center;padding:8px;"
+                placeholder="ingresa texto" tabindex="4"></textarea>
+            <br>
+            <input type="submit" value="ENVIAR" />
+        </form>
+        <br>
+        <br>
+    </div>
+
+    <div style="text-align: center;width: 100%;font-size: 15px;color: rgb(192, 177, 177);">
+        <br>
+        <h2>Email</h2>
+        <h2>gdave0930&copy;gmail.com</h2>
+        <h2>Localizacion</h2>
+        <img style="width:30px;height:20px;" src="{{url_for('static',filename='images/iconos/zapato1.png')}}">
+        <h2>via perimetral trinipuerto alado del tia</h2>
+        <img style="width:30px;height:20px;" src="{{url_for('static',filename='images/iconos/zapato2.jpg')}}">
+        <h1>Diseñado por &copy;Deybi Garcia</h1>
+        <br>
+        <br>
+    </div>
+
+    <script>
+        function changeColor(button) {
+            button.classList.toggle("clicked");
+        }
+
+        function changeColorxxx(button) {
+            button.classList.toggle("clicked");
+            // Obtener el formulario padre del botón
+            var form = button.closest(".formx");
+            // Obtener el input oculto que contiene el ID del producto
+            var productInput = form.querySelector("input[name='product']");
+            // Obtener el valor del input
+            var productId = productInput.value;
+
+            // Verificar si el botón tiene la clase 'clicked'
+            if (button.classList.contains("clicked")) {
+                // Si el botón tiene la clase 'clicked', agregar el producto al carrito
+                console.log("Agregar producto al carrito con ID:", productId);
+                // Aquí puedes agregar la lógica para agregar el producto al carrito usando AJAX o un formulario de envío, según tu implementación
+            } else {
+                // Si el botón no tiene la clase 'clicked', quitar el producto del carrito
+                console.log("Quitar producto del carrito con ID:", productId);
+                // Aquí puedes agregar la lógica para quitar el producto del carrito usando AJAX o un formulario de envío, según tu implementación
+            }
+        }
+
+    </script>
+</body>
+
+</html>

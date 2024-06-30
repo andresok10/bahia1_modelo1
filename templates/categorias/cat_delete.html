@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>tienda</title>
+    <!--<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>-->
+</head>
+<body style="background-color:rgb(18, 124, 223);font-size: 30px;">
+    <br>
+    <p>¿Estás seguro de borrar la categoría: {{catx.nombre}}</p>
+    <br>
+    <h1>{{msg}}</h1>
+
+    {% if catx %}
+    <form style="text-align: center;" action="/delete_cat/{{catx.id}}" method="POST">
+        <input type="hidden" name="csrf_token" value = "{{ csrf_token() }}" /> 
+        <br>
+        <label></label>
+        <br>
+        <input type="submit" name="si" value="esta seguro de eliminar  si "></input>
+        <br>
+        <a style="color: rgb(21, 255, 0);" href="/categorias">NO</a>
+        <br>
+        <br>
+    </form>
+    {% endif %}
+
+</body>
+</html>
