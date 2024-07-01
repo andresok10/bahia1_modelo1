@@ -34,12 +34,12 @@ app.register_blueprint(d)
 app.app_context().push()
 db.create_all()
 
-try:
-    db.session.add_all(consultas)
-    db.session.commit()
+#try:
+#    db.session.add_all(consultas)
+#    db.session.commit()
     #db.session.close()
-except:
-    pass
+#except:
+#    pass
 
 if __name__ == '__main__':
     csrf = CSRFProtect(app)
