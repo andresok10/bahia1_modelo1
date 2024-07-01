@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_wtf.csrf import CSRFProtect   #from flask_wtf import FlaskForm,CSRFProtect  # pip install Flask-WTF
-from modelo1 import *
+from modelo1 import db, consultas
 #from fun_inicio_cookie_cart2 import app_blueprint as a
 #from fun_inicio_session_get import app_blueprint as a
 from fun_inicio1xx import app_blueprint as a
