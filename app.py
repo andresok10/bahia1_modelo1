@@ -1,19 +1,19 @@
 from flask import Flask
 from flask_wtf.csrf import CSRFProtect   #from flask_wtf import FlaskForm,CSRFProtect  # pip install Flask-WTF
-#from modelo1 import *
+from modelo1 import *
 #from fun_inicio_cookie_cart2 import app_blueprint as a
 #from fun_inicio_session_get import app_blueprint as a
 from fun_inicio1xx import app_blueprint as a
 from fun_categorias import app_blueprint as b
 from fun_productos import app_blueprint as c
 from fun_usuarios import app_blueprint as d
-from modelo1 import *
+#from modelo1 import *
 app = Flask(__name__)
 app.secret_key="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 #app.config['SQLALCHEMY_DATABASE_URI']= 'postgresql+psycopg2://postgres:123456@localhost:5432/test'
 #engine=create_engine('postgresql://ok:7qF6RmXo5vKNJ4QzWOQDD4NyPGigclw9@dpg-cpgajvmct0pc73dag83g-a:5432/db1_dhy6')
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql+psycopg2://okk:wTmHgGld5N1p88fC0UcYg1oZ3DevB3dl@dpg-cq0tr7eehbks73ehlp7g-a/db1_rlpa"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://okk:wTmHgGld5N1p88fC0UcYg1oZ3DevB3dl@dpg-cq0tr7eehbks73ehlp7g-a/db1_rlpa"
 #app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:@localhost/bahia1"
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://usuario:contraseña@localhost/nombre_base_datos'  # Reemplaza con tu propia configuración de MySQL
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
