@@ -24,7 +24,7 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db.init_app(app)
 #from flask_session import Session
 #Session(app)
-csrf = CSRFProtect(app)
+#csrf = CSRFProtect(app)
 
 app.register_blueprint(a)
 app.register_blueprint(b)
