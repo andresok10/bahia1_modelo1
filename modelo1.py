@@ -86,6 +86,7 @@ class DetallePedido(db.Model):
 
 #]
 
+#while True:
 try:
     consultas=[
     usuarios(nombre="dave1x",usuario="dave1",password="qqww",email="ok1@gmail.com",admin=True),
@@ -178,7 +179,7 @@ try:
     articulos(img1="m1.jpg",nombre="ok44",precio=10.22, info="xxx",stock=5, sub_mujer=12, sub_hombre=0),
     articulos(img1="m2.jpg",nombre="ok45",precio=20.22, info="xxx",stock=5, sub_mujer=12, sub_hombre=0),
     articulos(img1="m3.jpg",nombre="ok46",precio=10.22, info="xxx",stock=5, sub_mujer=12, sub_hombre=0),
-    articulos(img1="m4.jpg",nombre="ok47",precio=20.22, info="xxx",stock=5, sub_mujer=12, sub_hombre=0),
+    articulos(img1="m4.jpg",nombre="ok47",precio=20.22, info="xxx",stock=5, sub_mujer=12, sub_hombre=0)
 ]
     db.session.add_all(consultas)
     db.session.commit()
